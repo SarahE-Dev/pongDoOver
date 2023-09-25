@@ -65,8 +65,17 @@ function update() {
 
     if(ballXPosition > GAME_AREA_WIDTH - PADDLE_WIDTH - BALL_SIZE){
         ballXSpeed = -ballXSpeed;
-        computerPaddleYPosition = ballYPosition - 50;
+        computerPaddleYPosition = ballYPosition;
     }
+
+    if(ballXPosition >= GAME_AREA_WIDTH - PADDLE_WIDTH - BALL_SIZE && ballYPosition > GAME_AREA_HEIGHT - PADDLE_HEIGHT){
+        ballXSpeed = -ballXSpeed;
+        computerPaddleYPosition = ballYPosition - PADDLE_HEIGHT;
+        
+    }
+
+
+    
 
     if(ballXPosition < 0){
         reset();
